@@ -1,0 +1,82 @@
+:root{
+  --margin-horizontal : 10rem;
+  --gray-color: #6d6d6d69;
+  --green-color: #098800;
+}
+
+main {
+  @apply w-full min-h-[100vh];
+
+  .layout{
+    @apply relative min-h-[100vh];
+    // navigation bar
+    nav{
+      @apply px-[var(--margin-horizontal)] h-[50px] flex justify-between items-center border border-b-[var(--gray-color)];
+
+      .nav-left{
+        @apply flex items-center gap-4;
+
+        img{
+          @apply object-cover h-[40px];
+        }
+
+        h1{
+          font-weight: 1000;
+          font-size: 1.5rem;
+        }
+      }
+
+      .nav-right{
+        @apply h-full;
+        ul{
+          @apply flex justify-around gap-4 h-full;
+  
+          li{
+            @apply h-full flex items-center;
+          }
+          li:hover{
+            @apply border-b-[4px] border-b-[var(--green-color)]
+          }
+        }
+      }
+    }
+
+    //menu
+    .menu{
+      @apply absolute left-[10%] right-[10%] mt-2 max-w-[80%] w-full h-fit min-h-[200px] bg-white rounded shadow-lg;
+
+      .menu-title{
+        @apply w-full flex justify-center items-center h-[40px];
+
+        ul{
+          @apply flex gap-[2rem] h-full border-b;
+          li{
+            @apply h-full flex items-center;
+            p{
+              font-weight: 700;
+            }
+          }
+          li:hover{
+            @apply border-b-[4px] border-b-[var(--green-color)];
+          }
+        }
+      }
+
+      .contet{
+        @apply w-full h-fit p-2 flex flex-wrap gap-2 justify-start;
+        .item {
+          @apply w-[160px] bg-[var(--gray-color)] rounded relative;
+        }
+        p{
+          font-size: smaller;
+          @apply absolute bottom-1 text-right right-1 backdrop-blur rounded-lg w-[80%];
+        }
+      }
+    }
+
+    //pages
+    section{
+      @apply px-[var(--margin-horizontal)]
+    }
+  }
+}
