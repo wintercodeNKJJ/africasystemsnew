@@ -3,7 +3,11 @@ import { NavLink } from "react-router-dom";
 
 import logo from "../assets/ASL.png";
 
-const Navbar = () => {
+interface Props {
+  setVisible: (() => void) | undefined;
+}
+
+const Navbar = ({ setVisible }: Props) => {
   return (
     <nav>
       <div className="nav-left">
@@ -14,24 +18,39 @@ const Navbar = () => {
       </div>
       <div className="nav-right">
         <ul>
-          <li>
-            <NavLink to={"/Topic"}>
-              <p>Menu</p>
-            </NavLink>
+          <li onClick={() => (setVisible ? setVisible() : "")}>
+            <p>Menu</p>
           </li>
           <li>
-            <NavLink to={"/"}>
+            <NavLink
+              to={"/"}
+              className={({ isActive }) => (isActive ? "active" : undefined)}
+            >
               <p>Home</p>
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/about"}>
+            <NavLink
+              to={"/about"}
+              className={({ isActive }) => (isActive ? "active" : undefined)}
+            >
               <p>About</p>
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/Contact"}>
+            <NavLink
+              to={"/Contact"}
+              className={({ isActive }) => (isActive ? "active" : undefined)}
+            >
               <p>Contact</p>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={"/blogs"}
+              className={({ isActive }) => (isActive ? "active" : undefined)}
+            >
+              <p>Blog</p>
             </NavLink>
           </li>
         </ul>

@@ -1,3 +1,7 @@
 export {default as Navbar} from './navbar'
 export {default as Menu} from './menu'
 export {default as Content} from './content'
+export {default as Footer} from './footer'
+export {default as Team} from './team'
+export {default as Partners} from './partners'
+export {default as Contactfrom} from './contactform'
